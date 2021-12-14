@@ -6,8 +6,8 @@ namespace GroceryMarketTests
     [TestClass]
     public class PointOfSaleTerminalTests
     {
-        private GroceryStore groceryStore;
-        private PointOfSaleTerminal terminal;
+        private GroceryStore? groceryStore;
+        private PointOfSaleTerminal? terminal;
 
         [TestInitialize]
         public void SetUp()
