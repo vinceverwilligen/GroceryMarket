@@ -24,3 +24,4 @@ GroceryMarketConsole
 [GroceryMarketConsole](<./GroceryMarketConsole>) will open a command prompt,
 showing the creation of the [GroceryStore](<./GroceryMarket/Models/GroceryStore.cs>) and [PointOfSaleTerminal](<./GroceryMarket/Models/PointOfSaleTerminal.cs>).
 Then, it will simulate 3 times scanning of a set of of products.
+
