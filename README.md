@@ -3,7 +3,7 @@ This is an example of a Grocery Market
 
 The repository contains 3 projects:
 - [GroceryMarket](<./GroceryMarket>), which contains all models.
-- [GroceryMarketTest](<./GroceryMarketTest>), which contains tests for the models.
+- [GroceryMarketTests](<./GroceryMarketTests>), which contains tests for the models.
 - [GroceryMarketConsole](<./GroceryMarketConsole>), which contains a console app testing the models.
 
 GroceryMarket
@@ -13,9 +13,9 @@ A [Product](<./Models/Product>) contains List of [Price](<./Price>) object,
 it should always contain a unit price and can have multiple units of volume prices.
 The [PointOfSaleTerminal](<./PointOfSaleTerminal.cs>) has a shopping cart of all products it can scan. Then it can calculate the final total price.
 
-GroceryMarketTest
+GroceryMarketTests
 -----------------
-[GroceryMarketTest](<./GroceryMarketTest>) has 2 test classes.
+[GroceryMarketTests](<./GroceryMarketTest>) has 2 test classes.
 One for [GroceryStore](<./Models/GroceryStore>) and another for [PointOfSaleTerminal](<./PointOfSaleTerminal.cs>).
 More test classes might be added in the future.
 
