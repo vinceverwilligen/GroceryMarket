@@ -8,19 +8,19 @@ The repository contains 3 projects:
 
 GroceryMarket
 -------------
-[GroceryMarket](<./GroceryMarket>) contains a [GroceryStore](<./Models/GroceryStore.cs>) which will store all products.
-A [Product](<./Models/Product.cs>) contains List of [Price](<./Price.cs>) object,
+[GroceryMarket](<./GroceryMarket>) contains a [GroceryStore](<./GroceryMarket/Models/GroceryStore.cs>) which will store all products.
+A [Product](<./Models/Product.cs>) contains List of [Price](<./GroceryMarket/Models/Price.cs>) object,
 it should always contain a unit price and can have multiple units of volume prices.
-The [PointOfSaleTerminal](<./PointOfSaleTerminal.cs>) has a shopping cart of all products it can scan. Then it can calculate the final total price.
+The [PointOfSaleTerminal](<./GroceryMarket/Models/PointOfSaleTerminal.cs>) has a shopping cart of all products it can scan. Then it can calculate the final total price.
 
 GroceryMarketTests
 -----------------
 [GroceryMarketTests](<./GroceryMarketTest>) has 2 test classes.
-One for [GroceryStore](<./Models/GroceryStore.cs>) and another for [PointOfSaleTerminal](<./PointOfSaleTerminal.cs>).
+One for [GroceryStore](<./GroceryMarket/Models/GroceryStore.cs>) and another for [PointOfSaleTerminal](<./GroceryMarket/Models/PointOfSaleTerminal.cs>).
 More test classes might be added in the future.
 
 GroceryMarketConsole
 --------------------
 [GroceryMarketConsole](<./GroceryMarketConsole>) will open a command prompt,
-showing the creation of the [GroceryStore](<./Models/GroceryStore.cs>)and [PointOfSaleTerminal](<./PointOfSaleTerminal.cs>).
+showing the creation of the [GroceryStore](<./GroceryMarket/Models/GroceryStore.cs>)and [PointOfSaleTerminal](<./GroceryMarket/Models/PointOfSaleTerminal.cs>).
 Then, it will simulate 3 times scanning of a set of of products.
