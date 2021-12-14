@@ -29,5 +29,5 @@ jobs:
       with:
         artifact: /test-results-(.*)/
         name: 'Test report $1'
-        path: '/GroceryMarker/GroceryMarketTests/'
-        reporter: dotnet test --logger "trx;LogFileName=test-results.trx"
+        path: '/GroceryMarker/GroceryMarketTests/TestResults/net6.0/'
+        reporter: dotnet test --logger "trx;LogFileName=GroceryMarketTests.trx"
