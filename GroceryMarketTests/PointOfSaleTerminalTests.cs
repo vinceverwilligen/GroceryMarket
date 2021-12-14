@@ -28,37 +28,6 @@ namespace GroceryMarketTests
         }
 
         [TestMethod]
-        public void SetPricing_WithUnitPrice_UpdatesUnitPrice()
-        {
-            Assert.IsNotNull(groceryStore);
-            Assert.IsNotNull(terminal);
-
-            string code = "A";
-            double price = 1.5;
-
-            groceryStore.SetPricing(code, price);
-
-            double actualPrice = groceryStore.GetPricing(code);
-            Assert.AreEqual(price, actualPrice);
-        }
-
-        [TestMethod]
-        public void SetPricing_WithVolumePrice_UpdatesVolumePrice()
-        {
-            Assert.IsNotNull(groceryStore);
-            Assert.IsNotNull(terminal);
-
-            string code = "A";
-            double price = 3.0;
-            int volume = 3;
-
-            groceryStore.SetPricing(code, price, volume);
-
-            double actualPrice = groceryStore.GetPricing(code, volume);
-            Assert.AreEqual(price, actualPrice);
-        }
-
-        [TestMethod]
         public void ScanItem_WithCode_ShoppingCartUpdated()
         {
             Assert.IsNotNull(groceryStore);
@@ -83,6 +52,10 @@ namespace GroceryMarketTests
             Product product1 = terminal.ScanProduct(code1, groceryStore);
             Product product2 = terminal.ScanProduct(code2, groceryStore);
             Product product3 = terminal.ScanProduct(code3, groceryStore);
+
+            Assert.AreEqual(product1.Code, code1);
+            Assert.AreEqual(product2.Code, code2);
+            Assert.AreEqual(product3.Code, code3);
 
             double total = terminal.CalculateResult();
 
