@@ -15,7 +15,7 @@ namespace GroceryMarket.Models
 
         private Dictionary<Product, int> shoppingCart;
         /// <value>
-        /// Property <c>Products</c> represents a dictionary of scanned products and the count.
+        /// Property <c>ShoppingCart</c> represents a dictionary of scanned products and the count.
         /// </value>
         public Dictionary<Product, int> ShoppingCart
         {
@@ -24,7 +24,7 @@ namespace GroceryMarket.Models
         }
 
         /// <summary>
-        /// This constructor creates a new terminal with empty <c>ShoppingCart</c>.
+        /// This constructor creates a new <c>PointOfSaleTerminal</c> with empty <c>ShoppingCart</c>.
         /// </summary>
         public PointOfSaleTerminal()
         {
@@ -34,9 +34,9 @@ namespace GroceryMarket.Models
         /// <summary>
         /// This method will scan a <c>Product</c> from the <c>GroceryStore</c> and add it to the <c>ShoppingCart</c>.
         /// </summary>
-        /// <param name="code"><c>code</c> is the code of the product.</param>
+        /// <param name="code"><c>code</c> is the code of the <c>Product</c>.</param>
         /// <param name="groceryStore"><c>groceryStore</c> contains the available products to scan.</param>
-        /// <returns>The product that is scanned.</returns>
+        /// <returns>The <c>Product</c> that is scanned.</returns>
         /// <exception cref="Exception">Throws an exception if <c>Product</c> with <c>code</c> is not found.</exception>
         public Product ScanProduct(string code, GroceryStore groceryStore)
         {

@@ -34,10 +34,10 @@ namespace GroceryMarket.Models
         /// <summary>
         /// This method will add a new product to the list of products.
         /// </summary>
-        /// <param name="code"><c>code</c> is the code of the new product.</param>
-        /// <param name="name"><c>name</c> is the name of the new product.</param>
-        /// <param name="unitPrice"><c>unitPrice</c> is the unit price of the new product.</param>
-        /// <returns>The new product that is added to the product list.</returns>
+        /// <param name="code"><c>code</c> is the code of the new <c>Product</c>.</param>
+        /// <param name="name"><c>name</c> is the name of the new <c>Product</c>.</param>
+        /// <param name="unitPrice"><c>unitPrice</c> is the unit price of the new <c>Product</c>.</param>
+        /// <returns>The new <c>Product</c> that is added to the list of products.</returns>
         public Product AddProduct(string code, string name, double unitPrice)
         {
             Product product = new Product(code, name, unitPrice);
@@ -52,9 +52,9 @@ namespace GroceryMarket.Models
         /// This method will set the price for the given amount of units.
         /// </summary>
         /// <param name="code"><c>code</c> is the code of the product.</param>
-        /// <param name="price"><c>price</c> is the new price for the volume.</param>
-        /// <param name="units"><c>units</c> is the volume for which the price is set.</param>
-        /// <returns>The product with the updated or new volume price.</returns>
+        /// <param name="price"><c>price</c> is the new price for the units of volume.</param>
+        /// <param name="units"><c>units</c> is the units of volume for which the price is set.</param>
+        /// <returns>The product with the updated price for units of volume.</returns>
         /// <exception cref="Exception">Throws an exception if <c>Product</c> with <c>code</c> is not found.</exception>
         public Product SetPricing(string code, double price, int units = 1)
         {
@@ -64,16 +64,16 @@ namespace GroceryMarket.Models
             }
 
             Product product = this.products[code];
-            product.SetVolumePrice(price, units);
+            product.SetUnitsOfVolumePrice(price, units);
 
             return product;
         }
 
         /// <summary>
-        /// This method gets the price of the product with <c>code</c> and volume of <c>units</c>.
+        /// This method gets the price of the <c>Product</c> with <c>code</c> and volume of <c>units</c>.
         /// </summary>
-        /// <param name="code"><c>code</c> is the code of the product.</param>
-        /// <param name="units"><c>units</c> is the volume of the product.</param>
+        /// <param name="code"><c>code</c> is the code of the <c>Product</c>.</param>
+        /// <param name="units"><c>units</c> is the volume of the <c>Product</c>.</param>
         /// <returns></returns>
         /// <exception cref="Exception">Throws an exception if <c>Product</c> with <c>code</c> is not found.</exception>
         public double GetPricing(string code, int units = 1)

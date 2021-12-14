@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 namespace GroceryMarket.Models
 {
     /// <summary>
-    /// Class <c>Price</c> contains the price for the certain amount of unit.
+    /// Class <c>Price</c> contains the price for the certain units of volume.
     /// </summary>
     public class Price
     {
         private int units;
         /// <value>
-        /// Property <c>Units</c> is the amount of products the price <c>value</c> represents.
+        /// Property <c>Units</c> is the units of volume of a product.
         /// </value>
         public int Units
         {
@@ -23,7 +23,7 @@ namespace GroceryMarket.Models
 
         private double value;
         /// <value>
-        /// Property <c>value</c> represents the price for the amount of <c>Units</c> of products.
+        /// Property <c>value</c> represents the price for the <c>Units</c> of volume for a product.
         /// </value>
         public double Value
         {
@@ -32,7 +32,7 @@ namespace GroceryMarket.Models
         }
 
         /// <summary>
-        /// This constructor creates a <c>Price</c> object for given <c>units</c> and price <c>value<c/>.
+        /// This constructor creates a <c>Price</c> object for given <c>units</c> of volume and price <c>value<c/>.
         /// </summary>
         /// <param name="units"></param>
         /// <param name="value"></param>

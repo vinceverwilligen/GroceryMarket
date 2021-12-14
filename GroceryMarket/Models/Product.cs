@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 namespace GroceryMarket.Models
 {
     /// <summary>
-    /// Class <c>Product</c> represents a <c>Product</c> available in the <c>GroceryStore</c>.
+    /// Class <c>Product</c> represents a product available in the <c>GroceryStore</c>.
     /// </summary>
     public class Product
     {
 
-        const string PRODUCT_WITH_CODE_VOLUME_PRICE_NOT_FOUND = "Product with code {0} has no value price for {0} units.";
+        const string PRODUCT_WITH_CODE_NO_PRICE_FOR_UNITS_OF_VOLUME_FOUND = "Product with code {0} does not contain {0} units of volume.";
 
         private string code;
         /// <value>
@@ -36,7 +36,7 @@ namespace GroceryMarket.Models
 
         private Dictionary<int, Price> prices;
         /// <value>
-        /// The property <c>Prices</c> contains the unit price and all other volume prices.
+        /// The property <c>Prices</c> contains the unit price and all other units of volume prices.
         /// </value>
         public Dictionary<int, Price> Prices
         {
@@ -55,15 +55,15 @@ namespace GroceryMarket.Models
             this.code = code;
             this.name = name;
             this.prices = new Dictionary<int, Price>();
-            this.prices.Add(1, new Price(1, unitPrice));
+            SetUnitsOfVolumePrice(unitPrice, 1);
         }
 
         /// <summary>
-        /// This methos will set or update the <c>price</c> for the given volume of <c>units</c>.
+        /// This method will set or update the <c>price</c> for the given volume of <c>units</c>.
         /// </summary>
         /// <param name="price">Is the new <c>price</c> of the <c>Product</c>.</param>
-        /// <param name="units">Is the amount of <c>units</c> for the given price.</param>
-        public void SetVolumePrice(double price, int units)
+        /// <param name="units">Is the <c>units</c> of volume for the given price.</param>
+        public void SetUnitsOfVolumePrice(double price, int units)
         {
             if (this.prices.ContainsKey(units))
             {
@@ -76,23 +76,23 @@ namespace GroceryMarket.Models
         }
 
         /// <summary>
-        /// This method with find the price for the amount of <c>units</c>.
+        /// This method with find the price for the <c>units</c> of volume.
         /// </summary>
         /// <param name="units">The <c>units</c> of the <c>Product</c>.</param>
-        /// <returns>Returns the price for the given amount of units.</returns>
-        /// <exception cref="Exception">Not price found fot the given <c>units</c>.</exception>
+        /// <returns>Returns the price for the given <c>units</c> of volume.</returns>
+        /// <exception cref="Exception">Not price found fot the given <c>units</c> of volume.</exception>
         public double GetVolumePrice(int units)
         {
             if (!this.prices.ContainsKey(units))
             {
-                throw new Exception(string.Format(PRODUCT_WITH_CODE_VOLUME_PRICE_NOT_FOUND, code, units));
+                throw new Exception(string.Format(PRODUCT_WITH_CODE_NO_PRICE_FOR_UNITS_OF_VOLUME_FOUND, code, units));
             }
 
             return this.prices[units].Value;
         }
 
         /// <summary>
-        /// Get the highest amount of volume price available.
+        /// Get the highest units of volume price available.
         /// </summary>
         /// <returns>The units of the volume.</returns>
         private int GetHighestVolume()
@@ -102,16 +102,16 @@ namespace GroceryMarket.Models
                 return 1;
             }
 
-            List<int> volumes = this.prices.Keys.ToList();
-            volumes.Sort();
-            return volumes[volumes.Count - 1];
+            List<int> unitsList = this.prices.Keys.ToList();
+            unitsList.Sort();
+            return unitsList[unitsList.Count - 1];
         }
 
         /// <summary>
-        /// Get the highest amount of volume price available lower than given amount of <c>units</c>.
+        /// Get the highest units of volume price available lower than given <c>units</c> of volume.
         /// </summary>
-        /// <param name="units">The <c>units</c> of the <c>Product</c>.</param>
-        /// <returns>Returns the highest amount of units lower than given <c>units</c>.</returns>
+        /// <param name="units">The <c>units</c> of volume.</param>
+        /// <returns>Returns the highest amount of units of volume lower than given <c>units</c> of volume.</returns>
         private int GetVolumeLowerThan(int units)
         {
             if (this.Prices.Count == 1 || units == 1)
@@ -126,10 +126,10 @@ namespace GroceryMarket.Models
             return unitsList[index - 1];
         }
         /// <summary>
-        /// This method calculate the total amount for given <c>units</c> of a <c>Product</c>.
+        /// This method calculate the total price for the given <c>units</c> of volume for a <c>Product</c>.
         /// </summary>
-        /// <param name="units">The <c>units</c> of the <c>Product</c>.</param>
-        /// <returns>Return the total price of the <c>units</c> of the <c>Product</c>.</returns>
+        /// <param name="units">The <c>units</c> of volume of the <c>Product</c>.</param>
+        /// <returns>Return the total price of the <c>units</c> ofvolume for the <c>Product</c>.</returns>
         public double CalculateProductPrice(int units)
         {
             double total = 0;
