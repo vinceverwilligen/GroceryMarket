@@ -23,11 +23,11 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: Test
-      run: dotnet test --no-build --verbosity normal --logger "trx;LogFileName=GroceryMarketTests.trx"test --logger "trx;LogFileName=GroceryMarketTests.trx"
+      run: dotnet test --no-build --verbosity normal --logger "trx;LogFileName=GroceryMarketTests.trx"
     - name: Test Reporter
       uses: dorny/test-reporter@v1.5.0
       with:
         artifact: /test-results-(.*)/
         name: 'Test report $1'
         path: '/GroceryMarker/GroceryMarketTests/TestResults/net6.0/'
-        reporter: 'dotnet'
+        reporter: 'dotnet-trx'
