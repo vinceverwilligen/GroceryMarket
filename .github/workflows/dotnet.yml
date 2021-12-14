@@ -27,7 +27,6 @@ jobs:
     - name: Test Reporter
       uses: dorny/test-reporter@v1.5.0
       with:
-        artifact: /test-results-(.*)/
-        name: 'Test report $1'
+        name: Test Results
         path: ./**/TestResults/*.trx
         reporter: 'dotnet-trx'
