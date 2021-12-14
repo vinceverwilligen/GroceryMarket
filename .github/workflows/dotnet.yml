@@ -23,7 +23,7 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: Test
-      run: dotnet test --no-build --verbosity normal --logger "trx;LogFileName=GroceryMarketTests.trx"
+      run: dotnet test --no-build --verbosity normal --logger "trx;LogFileName=test-results.trx"
     - name: Test Reporter
       uses: dorny/test-reporter@v1.5.0
       with:
