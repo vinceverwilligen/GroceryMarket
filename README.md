@@ -15,12 +15,12 @@ The [PointOfSaleTerminal](<./GroceryMarket/Models/PointOfSaleTerminal.cs>) has a
 
 GroceryMarketTests
 -----------------
-[GroceryMarketTests](<./GroceryMarketTest>) has 2 test classes.
+[GroceryMarketTests](<./GroceryMarketTests>) has 2 test classes.
 One for [GroceryStore](<./GroceryMarket/Models/GroceryStore.cs>) and another for [PointOfSaleTerminal](<./GroceryMarket/Models/PointOfSaleTerminal.cs>).
 More test classes might be added in the future.
 
 GroceryMarketConsole
 --------------------
 [GroceryMarketConsole](<./GroceryMarketConsole>) will open a command prompt,
-showing the creation of the [GroceryStore](<./GroceryMarket/Models/GroceryStore.cs>)and [PointOfSaleTerminal](<./GroceryMarket/Models/PointOfSaleTerminal.cs>).
+showing the creation of the [GroceryStore](<./GroceryMarket/Models/GroceryStore.cs>) and [PointOfSaleTerminal](<./GroceryMarket/Models/PointOfSaleTerminal.cs>).
 Then, it will simulate 3 times scanning of a set of of products.
